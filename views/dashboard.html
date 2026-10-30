@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #ccc; width: 360px; text-align: center; }
+    button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 0; cursor: pointer; color: white; }
+    .logout { background: #2563eb; }
+    .delete { background: #dc2626; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Bem-vindo!</h2>
+    <p>Você está logado no sistema.</p>
+    <form action="/logout" method="POST">
+      <button class="logout" type="submit">Sair</button>
+    </form>
+    <form action="/deletar-conta" method="POST">
+      <button class="delete" type="submit">Excluir conta</button>
+    </form>
+  </div>
+</body>
+</html>

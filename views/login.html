@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #ccc; width: 320px; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc; }
+    button { background: #2563eb; color: white; cursor: pointer; }
+    a { display: block; margin-top: 10px; text-align: center; color: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <input type="email" name="email" placeholder="E-mail" required />
+      <input type="password" name="senha" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <a href="/esqueci-senha">Esqueci minha senha</a>
+    <a href="/cadastro">Criar conta</a>
+    <p id="login-message" role="status"></p>
+  </div>
+  <script>
+    if (new URLSearchParams(window.location.search).has('senhaAtualizada')) {
+      document.getElementById('login-message').textContent = 'Senha redefinida. Entre com sua nova senha.';
+    }
+  </script>
+</body>
+</html>
